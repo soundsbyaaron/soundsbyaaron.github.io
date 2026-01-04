@@ -74,14 +74,23 @@ nav a:hover {
 /* HERO */
 
 .hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: stretch;
   margin-bottom: 90px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hero h1 {
   font-weight: 300;
   font-size: 2.2rem;
   line-height: 1.4;
-  max-width: 700px;
 }
 
 .line {
@@ -97,57 +106,46 @@ nav a:hover {
   opacity: .7;
 }
 
-/* MUSIC / WORKS */
+/* HERO IMAGES */
 
-.music {
-  margin-bottom: 100px;
+.hero-images {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
 }
 
-.section-title {
-  font-size: 1.3rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-}
-
-.track-card {
+.hero-image {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 1 / 1;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--pastel1), var(--pastel2));
-  padding: 30px;
-  box-shadow: 0 20px 40px rgba(90, 0, 200, 0.05);
-  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(90, 0, 200, 0.12);
+  transition: transform 0.6s cubic-bezier(.16,.84,.44,1);
 }
 
-.track-title {
-  font-size: 1.05rem;
-  margin-bottom: 20px;
-  letter-spacing: .08em;
+.hero-image:hover {
+  transform: scale(1.035) rotate(0.6deg);
 }
 
-/* FAVORITES */
+/* IMAGE */
 
-.favorites {
-  margin-bottom: 100px;
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.favorites-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
+/* FILM GRAIN */
 
-.favorite-card {
-  background: linear-gradient(135deg, var(--pastel1), var(--pastel2));
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 12px 30px rgba(90, 0, 200, 0.05);
-}
-
-.favorite-title {
-  font-size: 0.85rem;
-  letter-spacing: .06em;
-  margin-bottom: 12px;
-  opacity: .85;
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
 /* FOOTER */
@@ -166,27 +164,18 @@ footer {
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
-  .favorites-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+  .hero {
+    grid-template-columns: 1fr;
   }
 
-  footer {
-    flex-direction: column;
-    gap: 12px;
+  .hero-images {
+    margin-top: 40px;
   }
 }
 
 @media (max-width: 500px) {
-  .favorites-grid {
-    grid-template-columns: 1fr;
+  .hero-images {
+    flex-direction: column;
   }
 }
 </style>
@@ -204,102 +193,21 @@ footer {
 </header>
 
 <section class="hero">
-  <h1>music for film<br>and possibly other stuff</h1>
-  <div class="line"></div>
-  <p class="tag">on the right, a picture of my best friend and me</p>
-</section>
-
-<section class="favorites">
-  <h2 class="section-title">my favorites &lt;3</h2>
-
-  <div class="favorites-grid">
-    <div class="favorite-card">
-      <div class="favorite-title">un cohete está por despegar</div>
-      <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/un-cohete-esta-por-despegar&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
+  <div class="hero-text">
+    <div>
+      <h1>music for film<br>and possibly other stuff</h1>
+      <div class="line"></div>
     </div>
+    <p class="tag">on the right, a picture of my best friend and me</p>
+  </div>
 
-    <div class="favorite-card">
-      <div class="favorite-title">memorias de un asesino</div>
-      <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/memorias-de-un-asesino&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
+  <div class="hero-images">
+    <div class="hero-image">
+      <img src="lucky in the studio - almost square.jpeg" alt="Lucky in the studio">
     </div>
-
-    <div class="favorite-card">
-      <div class="favorite-title">heavenly dreams</div>
-      <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/heavenly-dreams&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
+    <div class="hero-image">
+      <img src="aaron in the elevator - almost square.jpeg" alt="Aaron in the elevator">
     </div>
-
-    <div class="favorite-card">
-      <div class="favorite-title">nace un alma en el infierno (persecución)</div>
-      <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/nace-un-alma-en-el-infierno&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-    </div>
-  </div>
-</section>  
-
-<section class="music" id="music">
-  <h2 class="section-title">all music</h2>
-
-  <div class="track-card">
-    <div class="track-title">tomás</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/tomas&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-  </div>
-
-  <div class="track-card">
-    <div class="track-title">al rescate</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/al-rescate&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-  </div>
-
-  <div class="track-card">
-    <div class="track-title">un cohete está por despegar</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/un-cohete-esta-por-despegar&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-  </div>
-
-  <div class="track-card">
-    <div class="track-title">astronauta</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/astronauta&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-  </div>
-
-  <div class="track-card">
-    <div class="track-title">déjame ir</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/dejame-ir&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-  </div>
-
-  <div class="track-card">
-    <div class="track-title">crisálida</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/crisalida&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-  </div>
-
-  <div class="track-card">
-    <div class="track-title">heavenly dreams</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/heavenly-dreams&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-  </div>
-
-  <div class="track-card">
-    <div class="track-title">memorias de un asesino</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/memorias-de-un-asesino&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-  </div>
-
-  <div class="track-card">
-    <div class="track-title">el infierno</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/el-infierno&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
-  </div>
-
-  <div class="track-card">
-    <div class="track-title">nace un alma en el infierno (persecución)</div>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/nace-un-alma-en-el-infierno&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false"></iframe>
   </div>
 </section>
 
