@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +27,6 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Space Grotesk', sans-serif;
-  cursor: default;
 }
 
 .container {
@@ -37,7 +35,7 @@ body {
   padding: 60px 25px 80px;
 }
 
-/* ---- HEADER ---- */
+/* HEADER */
 
 header {
   display: flex;
@@ -73,13 +71,10 @@ nav a:hover {
   opacity: 1;
 }
 
-/* ---- HERO ---- */
+/* HERO */
 
 .hero {
   margin-bottom: 90px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
 }
 
 .hero h1 {
@@ -102,7 +97,7 @@ nav a:hover {
   opacity: .7;
 }
 
-/* ---- MUSIC SECTION ---- */
+/* MUSIC */
 
 .music {
   margin-bottom: 100px;
@@ -120,11 +115,7 @@ nav a:hover {
   background: linear-gradient(135deg, var(--pastel1), var(--pastel2));
   padding: 30px;
   box-shadow: 0 20px 40px rgba(90, 0, 200, 0.05);
-  transition: transform .3s ease;
-}
-
-.track-card:hover {
-  transform: translateY(-6px);
+  margin-bottom: 30px;
 }
 
 .track-title {
@@ -133,7 +124,7 @@ nav a:hover {
   letter-spacing: .08em;
 }
 
-/* ---- FOOTER ---- */
+/* FOOTER */
 
 footer {
   margin-top: 120px;
@@ -159,7 +150,6 @@ footer {
   }
 }
 </style>
-
 </head>
 
 <body>
@@ -174,7 +164,7 @@ footer {
 </header>
 
 <section class="hero">
-  <h1>music for stories, films & hidden worlds<br></h1>
+  <h1>music for stories, films & hidden worlds</h1>
   <div class="line"></div>
   <p class="tag">composition — soundtrack — production — instrumentals</p>
 </section>
@@ -182,33 +172,78 @@ footer {
 <section class="music" id="music">
   <h2 class="section-title">selected work</h2>
 
-  <div class="track-card">
-    <div class="track-title">Hisaishi (nostalgia sketch)</div>
+  <!-- TRACKS -->
 
-```
-<iframe 
-  width="100%" 
-  height="166" 
-  scrolling="no" 
-  frameborder="no" 
-  allow="autoplay"
-  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/lucky-nostalgia/hisaishi&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
-</iframe>
-```
   <div class="track-card">
     <div class="track-title">tomás</div>
-
-```
-<iframe 
-  width="100%" 
-  height="166" 
-  scrolling="no" 
-  frameborder="no" 
-  allow="autoplay"
-  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/tomas&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
-</iframe>
-```   
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/tomas&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
   </div>
+
+  <div class="track-card">
+    <div class="track-title">al rescate</div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/al-rescate&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
+  </div>
+
+  <div class="track-card">
+    <div class="track-title">un cohete está por despegar</div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/un-cohete-esta-por-despegar&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
+  </div>
+
+  <div class="track-card">
+    <div class="track-title">astronauta</div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/astronauta&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
+  </div>
+
+  <div class="track-card">
+    <div class="track-title">déjame ir</div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/dejame-ir&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
+  </div>
+
+  <div class="track-card">
+    <div class="track-title">crisálida</div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/crisalida&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
+  </div>
+
+  <div class="track-card">
+    <div class="track-title">heavenly dreams</div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/heavenly-dreams&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
+  </div>
+
+  <div class="track-card">
+    <div class="track-title">memorias de un asesino</div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/memorias-de-un-asesino&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
+  </div>
+
+  <div class="track-card">
+    <div class="track-title">el infierno</div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/el-infierno&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
+  </div>
+
+  <div class="track-card">
+    <div class="track-title">nace un alma en el infierno (persecución)</div>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sounds-by-aaron/nace-un-alma-en-el-infierno&color=%23ff3f8e&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false">
+    </iframe>
+  </div>
+
 </section>
 
 <footer id="contact">
